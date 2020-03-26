@@ -15,6 +15,9 @@ NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}${EXT}"
 echo "Building $NAME under $GOOS/$GOARCH"
 go build "${PROJECT_SRC}" -o "${PROJECT_NAME}"
 
+exit 0
+
+
 tar cvfz tmp.tgz "${PROJECT_NAME}"
 CHECKSUM=$(sha256sum tmp.tgz | cut -d ' ' -f 1)
 
